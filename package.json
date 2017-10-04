@@ -1,7 +1,7 @@
 {
-  "name": "react-hot-redux-boilerplate",
+  "name": "Webix-Hot-Reload-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for React redux project with hot code reloading",
+  "description": "Boilerplate for Webix project with hot code reloading",
   "scripts": {
     "start": "node server.js",
     "build": "webpack -p --config webpack.build.config.js",
@@ -24,8 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.0.20",
-    "babel-loader": "^6.0.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

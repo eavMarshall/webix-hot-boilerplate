@@ -1,6 +1,6 @@
 
 var data = {
-  view:"form", width:400,
+  view:"form", width:300,
   elements:[
       { view:"segmented",
         options:["General Info", "History"]
