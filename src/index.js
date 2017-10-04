@@ -1,30 +1,29 @@
 
-var data = {
-  view:"form", width:300,
-  elements:[
-      { view:"segmented",
-        options:["General Info", "History"]
-      },
-      { view:"text",
-        value:"Gothenburg!"
-      },
-      { view:"text",
-        value:"Barrington Court 112"
-      },
-      { view:"text",
-        value:"€ 3 860 000"
-      },
-      { view:"datepicker",
-        value: new Date(2017,8,1)
-      }
-  ]
+const data = {
+  id:'app'
 }
-webix.ui(data);
+var view = webix.ui(data);
 
-if (module.hot) {
-    module.hot.accept();
-    for (var key in webix.ui.views)
-      webix.$$(key).destructor();
-    webix.ui(data);
+const loadLogin = ()=>{
+  import("./Views/Login").then((LoginView)=>{
+      for (var key in webix.ui.views)
+        webix.$$(key).destructor();
+
+      view = webix.ui(LoginView.data);
+  }).catch((err)=>{
+      console.error(err)
+  })
 }
-  
+
+setTimeout(loadLogin, 2000);
+
+if (module.hot && process.env.NODE_ENV === 'development') {
+  module.hot.accept();
+  for (var key in webix.ui.views)
+    webix.$$(key).destructor();
+  view = webix.ui(data);
+  webix.extend($$("app"), webix.ProgressBar);
+  $$("app").showProgress({
+    type:"icon"
+ });
+}
