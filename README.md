@@ -1,4 +1,5 @@
 # Webix hot reload boilerplate
+This boilerplate doesn't manage the state of the webix app. You will need to implement this yourself
 ## Aim
 To create a boiler plate to have:
 - Webix
